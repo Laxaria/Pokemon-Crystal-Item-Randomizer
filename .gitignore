@@ -13,4 +13,4 @@ RunGui.spec
 BuildGUILameName.bat
 BuildGUI.bat
 /Outputs/*
-.DS_Store
+*.DS_Store
