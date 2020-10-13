@@ -63,7 +63,7 @@ class PokemonItemRandomizerCLI:
     def get_rom(self):
         success = False
         while success is False:
-            rom_path = input('What is the file path to the Crystal Speedchoice ROM? Drag and drop the ROM file into Terminal. \n').strip()
+            rom_path = input('What is the file path to the Crystal Speedchoice 7.1 ROM? Drag and drop the ROM file into Terminal. \n').strip()
             if rom_path.endswith('.gbc'):
                 rom_file = os.path.basename(rom_path)
                 success = True
@@ -129,7 +129,11 @@ class PokemonItemRandomizerCLI:
                 spoilers = True
 
         rom_file, rom_path = self.get_rom()
-        self.generate_randomized_rom(rom_file, rom_path, spoilers, seed)
+        try:
+            self.generate_randomized_rom(rom_file, rom_path, spoilers, seed)
+        except Exception as e:
+            print(e)
+            
 
 if __name__ == '__main__':
     cli = PokemonItemRandomizerCLI()
