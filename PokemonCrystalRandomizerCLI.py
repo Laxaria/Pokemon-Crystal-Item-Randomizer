@@ -107,6 +107,7 @@ class PokemonItemRandomizerCLI:
             with open(f'./Outputs/{output_file_name}_SPOILER_LOG.txt', 'w') as fp:
                 yaml.dump(output_spoiler, fp, default_flow_style = False)
         
+        print(f'\nYour randomized ROM is located in the Outputs directory as {output_file_name}')
         
     def main(self):
         seed = self.get_rng_seed()
@@ -114,11 +115,11 @@ class PokemonItemRandomizerCLI:
 
         user_preset = self.select_preset()
         self.settings = self.load_settings(f'Modes/{user_preset}.yml')
-        print(self.settings)
 
         spoiler_choice = input('Do you want a spoiler log file? Y/n \n').strip()
         if not spoiler_choice:
             spoilers = True
+            print('Spoiler log file will be generated.\n')
         else:
             try:
                 options = dict(zip(['y','n'], [True, False]))

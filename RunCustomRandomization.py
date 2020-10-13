@@ -23,7 +23,7 @@ def randomizeRom(romPath, goal, flags = [], patchList = [], banList = None, allo
 				pfile = open(j)
 				ptext = pfile.read()
 				patchList.extend(json.loads(ptext))
-	print(changeListDict)
+	 print(changeListDict)
 
 	Zephyr = Badge.Badge()
 	Zephyr.isTrash = False

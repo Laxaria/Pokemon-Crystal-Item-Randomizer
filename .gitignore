@@ -12,5 +12,6 @@ dist/*
 RunGui.spec
 BuildGUILameName.bat
 BuildGUI.bat
-/Outputs/*
+/Outputs/*.txt
+/Outputs/*.gbc
 *.DS_Store
